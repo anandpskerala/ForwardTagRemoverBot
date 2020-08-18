@@ -15,6 +15,6 @@ A Simple Forward Tag remover Telegram Bot Made in Go.
 
 ## Community
 
-- Catch On Telegram : [@Torrent_SearcherBot](https://telegram.dog/Torrent_SearcherBot)
+- Catch On Telegram : [](https://telegram.dog/)
 - Telegram Support Chat : [@KeralasBots](https://telegram.dog/KeralasBots)
 - Telegram Updates Channel : [KeralaBotsNews](https://telegram.dog/KeralaBotsNews)
