@@ -49,6 +49,12 @@ func main() {
 	u.Dispatcher.AddHandler(handlers.NewCommand("start", commands.Start))
 	u.Dispatcher.AddHandler(handlers.NewCommand("help", commands.Help))
 	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Text, functions.ForwardText))
+	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Document, functions.ForwardDocument))
+	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Video, functions.ForwardVideo))
+	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Photo, functions.ForwardPhoto))
+	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Voice, functions.ForwardVoice))
+	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Audio, functions.ForwardAudio))
+	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Sticker, functions.ForwardSticker))
 
 	err = u.StartPolling()
 	if err != nil {
