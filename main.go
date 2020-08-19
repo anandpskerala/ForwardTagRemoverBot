@@ -19,6 +19,7 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
+	"github.com/Anandpskerala/ForwardTagRemoverBot/captions"
 	"github.com/Anandpskerala/ForwardTagRemoverBot/commands"
 	"github.com/Anandpskerala/ForwardTagRemoverBot/functions"
 )
@@ -36,7 +37,7 @@ func main() {
 
 	l := logger.Sugar()
 
-	token := os.Getenv("BOT_TOKEN")
+	token := "" //os.Getenv("BOT_TOKEN")
 	u, err := gotgbot.NewUpdater(logger, token)
 	if err != nil {
 		l.Fatalw("Updater failed starting", zap.Error(err))
@@ -48,7 +49,7 @@ func main() {
 
 	u.Dispatcher.AddHandler(handlers.NewCommand("start", commands.Start))
 	u.Dispatcher.AddHandler(handlers.NewCommand("help", commands.Help))
-	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Text, functions.ForwardText))
+	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Text, captions.SetCaption))
 	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Document, functions.ForwardDocument))
 	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Video, functions.ForwardVideo))
 	u.Dispatcher.AddHandler(handlers.NewMessage(Filters.Photo, functions.ForwardPhoto))

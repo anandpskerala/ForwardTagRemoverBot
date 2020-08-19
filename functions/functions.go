@@ -15,14 +15,6 @@ import (
 	"go.uber.org/zap"
 )
 
-func ForwardText(b ext.Bot, u *gotgbot.Update) error {
-	_, err := u.EffectiveMessage.ReplyText(u.EffectiveMessage.Text)
-	if err != nil {
-		b.Logger.Errorf("Error in sending message", zap.Error(err))
-	}
-	return err
-}
-
 func ForwardVideo(b ext.Bot, u *gotgbot.Update) error {
 	_, err := u.EffectiveMessage.ReplyVideo(b.NewFileId(u.EffectiveMessage.Video.FileId))
 	if err != nil {
