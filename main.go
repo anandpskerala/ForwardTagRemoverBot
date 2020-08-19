@@ -37,7 +37,7 @@ func main() {
 
 	l := logger.Sugar()
 
-	token := "" //os.Getenv("BOT_TOKEN")
+	token := os.Getenv("BOT_TOKEN")
 	u, err := gotgbot.NewUpdater(logger, token)
 	if err != nil {
 		l.Fatalw("Updater failed starting", zap.Error(err))
