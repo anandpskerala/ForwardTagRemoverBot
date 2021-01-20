@@ -23,23 +23,23 @@ func Start(b ext.Bot, u *gotgbot.Update) error {
 	startButton := [][]ext.InlineKeyboardButton{make([]ext.InlineKeyboardButton, 2), make([]ext.InlineKeyboardButton, 1)}
 
 	startButton[0][0] = ext.InlineKeyboardButton{
-		Text: "Source code",
-		Url:  "https://github.com/Anandpskerala/ForwardTagRemoverBot",
+		Text: "My Channel",
+		Url:  "https://t.me/Mega_Bots_Updates",
 	}
 
 	startButton[0][1] = ext.InlineKeyboardButton{
-		Text: "My Creater",
-		Url:  "https://telegram.dog/Anandpskerala",
+		Text: "Report Bugs😍",
+		Url:  "https://t.me/Mega_Bots_Supporters",
 	}
 
 	startButton[1][0] = ext.InlineKeyboardButton{
-		Text: "How to create a bot like me?",
-		Url:  "https://www.youtube.com/watch?v=swg6un2N4Fk&feature=youtu.be",
+		Text: "My Owner",
+		Url:  "https://t.me/AaBbcCDdv123",
 	}
 
 	markup := ext.InlineKeyboardMarkup{InlineKeyboard: &startButton}
 
-	msg := b.NewSendableMessage(u.EffectiveChat.Id, fmt.Sprintf("Hi [%s](tg://user?id=%v)\nI am A Forward Tag remover Bot.Send /help To Know What I Can Do", u.EffectiveUser.FirstName, u.EffectiveUser.Id))
+	msg := b.NewSendableMessage(u.EffectiveChat.Id, fmt.Sprintf("Hi [%s](tg://user?id=%v)\nI am A Forward Tag remover Bot.Send /help To Know What I Can Do But You must Join my updation Channel ⬇️⬇️", u.EffectiveUser.FirstName, u.EffectiveUser.Id))
 	msg.ReplyToMessageId = u.EffectiveMessage.MessageId
 	msg.ReplyMarkup = &markup
 	msg.ParseMode = parsemode.Markdown
